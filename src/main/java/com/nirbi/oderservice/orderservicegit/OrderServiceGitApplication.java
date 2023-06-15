@@ -21,7 +21,7 @@ public class OrderServiceGitApplication {
 
 	@GetMapping(path = "/fetchOrders")
 	public List<Order> fetchAllOrders() {
-		return orderInventory.getOrders().stream().sorted(Comparator.comparing(Order::getName))
+		return orderInventory.getOrders().stream().sorted(Comparator.comparing(Order::getName).reversed())
 				.collect(Collectors.toList());
 	}
 
